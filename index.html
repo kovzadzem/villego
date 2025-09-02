@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villego</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/js/script.js">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+  <!-- ლოგო ზემოთ -->
+  <div class="header-top">
+    <div class="logo">VilleGo</div>
+  </div>
+
+  <!-- ნავიგაცია და სხვა ქვემოთ -->
+  <div class="header-bottom">
+    <nav class="nav">
+      <ul>
+        <li><a href="#">ყველა კატეგორია</a></li>
+        <li><a href="#">მთავარი</a></li>
+        <li><a href="#">ბლოგი</a></li>
+        <li><a href="#">ფერმერები</a></li>
+        <li><a href="#">რუკა</a></li>
+        <li><a href="#">ჩვენ შესახებ</a></li>
+        <li><a href="#">კონტაქტი</a></li>
+      </ul>
+    </nav>
+
+    <!-- საძიებო ველი -->
+    <div class="search-bar">
+      <input type="text" placeholder="ძებნა">
+    </div>
+
+    <!-- ხატულები -->
+    <div class="icon">
+      <select class="lang">
+        <option value="ka">ქარ</option>
+        <option value="en">Eng</option>
+      </select>
+     <a href="#" class="wishlist">
+      <img src="asset/img/cart.svg" alt="Cart Icon" width="24" height="24"></a>
+      <a href="#" class="favorites">
+        <img src="asset/img/favorite.svg" alt="favorite icon" width="24" height="24">
+      </a>
+      <a href="#" class="profile">
+        <img src="asset/img/profile.svg" alt="profile icon" width="24" height="24">
+      </a>
+    </div>
+  </header>
+  
+   
+  
+
+
+
+    <!-- page content placeholder -->
+  <main style="min-height:60vh; padding:40px;">
+    <h1>მოკლე გვერდის შინაარსი</h1>
+    <p>ეს მხოლოდ იმისთვის, რომ footer გვერდის ბოლოში კარგად ჩანდეს.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+
+      <!-- left: contact + pages side-by-side -->
+      <div class="info-row">
+        <div class="info-box contact-box">
+          <h3>კონტაქტი</h3>
+          <div class="contact-line"><i class="fas fa-phone"></i><span>555 88 88 88</span></div>
+          <div class="contact-line"><i class="fas fa-map-marker-alt"></i><span>მიყვრისის ქ. N25</span></div>
+          <div class="contact-line"><i class="fas fa-envelope"></i><span>VilleGoLLC@gmail.com</span></div>
+        </div>
+
+        <div class="info-box pages-box">
+          <h3>გვერდები</h3>
+          <ul>
+            <li>ჩვენს შესახებ</li>
+            <li>კონტაქტი</li>
+            <li>ბლოგი</li>
+            <li>რეგისტრაცია</li>
+          </ul>
+        </div>
+
+        <!-- right: map block (photo + text overlay like image) -->
+        <div class="map-box">
+          <!-- map image (use provided file path; change if needed) -->
+          <img src="/mnt/data/bc1e0579-d61e-47a0-bec7-f2577e4286e3.png" alt="Map" class="map-img">
+          <div class="map-text">
+            <strong>მიყვრისის ნ.25</strong>
+            <span>თბილისი, საქართველო</span>
+            <a href="#" class="map-link">გაიგე გზა »</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- phone mockup at bottom-right sized to footer height -->
+    <div class="footer-phone" aria-hidden="true">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-screen-inner">
+            <h4 class="phone-title">ჩამოტვირთეთ<br>VilleGo</h4>
+            <div class="phone-logo" aria-hidden="true">
+              <!-- small SVG logo -->
+              <svg viewBox="0 0 64 64" width="64" height="64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="32" cy="32" r="30" fill="#fff"/>
+                <path d="M32 12c6 0 11 4 11 9 0 5-4 9-11 9s-11-4-11-9c0-5 5-9 11-9z" fill="#10773f"/>
+                <path d="M20 40c5 4 14 6 14 6s9-2 14-6c0 0-6 12-14 14 0 0-8-1-14-14z" fill="#10773f"/>
+              </svg>
+            </div>
+            <div class="phone-badges">
+              <a href="#" aria-label="App Store"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="badge"></a>
+              <a href="#" aria-label="Google Play"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="badge"></a>
+              <a href="#" aria-label="Microsoft Store"><img src="https://developer.microsoft.com/en-us/store/badges/images/English_get-it-from-MS.png" alt="Microsoft Store" class="badge"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bottom bar -->
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> VilleGo.LLC — ყველა უფლება დაცულია</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,256 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: column; /* ზედა-ქვედა განლაგება */
+  background: white;
+  border-bottom: 2px solid #ddd;
+}
+
+
+/* ზედა ზოლი – ლოგო */
+.header-top {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.logo {
+  font-size: 70px;
+  font-weight: bold;
+  color:#007F5F
+}
+
+/* ქვედა ზოლი – ნავიგაცია, ძებნა, აიქონები */
+.header-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #007F5F;
+  padding: 10px 20px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.search-bar input {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 20px;
+  background: #80BF8F;
+  outline: none;
+  width: 500px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon a  {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+
+.lang {
+  border: none;
+  font-size: 14px;
+}
+
+
+
+:root{
+  --green: #008037;
+  --dark: #333;
+  --muted: #f0f0f0;
+  --footer-pad: 28px;
+}
+
+/* Reset-ish */
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, "Helvetica Neue", Arial, sans-serif;color:var(--dark);background:#fafafa}
+
+/* Footer */
+.footer{
+  background:#fff;
+  border-top:1px solid #e4e4e4;
+  padding: var(--footer-pad);
+  position:relative;
+  overflow:visible;
+  min-height:220px; /* adjustable */
+}
+
+/* Main row that holds left info and map */
+.footer-content{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+/* info-row: contact + pages + map side-by-side */
+.info-row{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+}
+
+/* small info boxes */
+.info-box{
+  background:#fff;
+  border:2px solid var(--dark);
+  border-radius:8px;
+  padding:12px 14px;
+  min-width:200px;
+}
+
+/* make contact + pages compact */
+.contact-box, .pages-box{
+  width:220px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+/* headings */
+.info-box h3{
+  margin:0 0 6px 0;
+  font-size:15px;
+  color:var(--green);
+}
+
+/* contact lines */
+.contact-line{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+}
+.contact-line i{color:var(--green); width:18px; text-align:center}
+
+/* pages list */
+.pages-box ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.pages-box li::before{content:"\25AA";display:inline-block;margin-right:8px;color:var(--green);font-size:10px;vertical-align:middle}
+
+/* MAP box: replicate photo layout */
+.map-box{
+  position:relative;
+  flex:1;
+  min-width:300px;
+  border-radius:8px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+.map-img{
+  width:100%;
+  height:160px;            /* map image height */
+  object-fit:cover;
+  display:block;
+  filter:contrast(0.98) saturate(0.95);
+}
+
+/* text overlay on map — styled like the photo */
+.map-text{
+  position:absolute;
+  left:18px;
+  bottom:14px;
+  background:rgba(255,255,255,0.92);
+  padding:10px 12px;
+  border-radius:6px;
+  box-shadow:0 6px 14px rgba(0,0,0,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.map-text strong{font-size:15px;color:var(--dark)}
+.map-text span{font-size:13px;color:#666}
+.map-text .map-link{font-size:13px;color:var(--green);text-decoration:none;font-weight:600}
+
+/* footer bottom area (copyright + socials) */
+.footer-bottom{
+  max-width:1200px;
+  margin: 16px auto 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding-top:10px;
+  border-top:1px solid #eee;
+}
+
+/* socials */
+.footer-socials a{margin-left:8px;color:var(--dark);font-size:18px;text-decoration:none}
+.footer-socials a:hover{color:var(--green)}
+
+/* PHONE mockup — aligned to the footer's right-bottom and sized to footer height */
+.footer-phone{
+  position:absolute;
+  right:16px;
+  bottom:18px;            /* sits on bottom inside footer */
+  height: calc(100% - 36px); /* approximately footer height minus paddings */
+  display:flex;
+  align-items:center;
+  pointer-events:none;    /* prevent accidental clicks on mockup; change if you want badges clickable */
+  z-index:8;
+}
+
+/* phone frame adapt to footer height */
+.phone-frame{
+  height:100%;
+  width:120px;              /* narrow phone */
+  border-radius:26px;
+  background:#f7f9fa;
+  padding:10px;
+  border:6px solid var(--muted);
+  box-shadow:0 10px 24px rgba(0,0,0,0.12);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* small notch */
+.phone-notch{width:44px;height:8px;background:#f7f9fa;border-radius:6px;margin:4px auto}
+
+/* screen area uses remaining height */
+.phone-screen{
+  background:#fff;
+  flex:1;
+  border-radius:14px;
+  margin-top:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+}
+.phone-screen-inner{text-align:center;pointer-events:none}
+.phone-title{margin:0 0 8px;font-size:13px;color:#0b5a2f;font-weight:700}
+.phone-logo svg{display:block;margin:0 auto 8px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 6px 14px rgba(16,119,63,0.12)}
+.phone-badges{display:flex;flex-direction:column;gap:6px;align-items:center}
+.phone-badges .badge{width:100px;display:block}
+
+/* make badges clickable if pointer-events enabled on phone (not by default) */
+.phone-badges a{pointer-events:auto}
+
+/* responsiveness */
+@media (max-width:980px){
+  .info-row{flex-direction:column;gap:12px}
+  .map-img{height:200px}
+  .footer-phone{display:none} /* hide phone on small screens */
+  .footer{min-height:320px}
+}
