@@ -72,185 +72,221 @@ body {
   font-size: 14px;
 }
 
+/* footer */
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
 
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;   /* სვეტები და ლოგო ცენტრში */
+  align-items: flex-start;
+  gap: 60px;                 /* ლოგოსა და სვეტებს შორის ოდნავ მეტი დაშორება */
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 40px;        /* ოდნავ მარჯვნივ გაწევა */
+}
+
+/* ლოგო */
+.footer-logo {
+  flex: 0 0 auto;
+  min-width: 150px;
+  text-align: left;
+}
+
+/* ლინკები */
+.footer-links {
+  display: flex;
+  gap: 60px;  /* სვეტებს შორის თანაბარი დაშორება */
+  flex: 2;
+  justify-content: center;
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 14px;
+  color: #fff;
+}
+.footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-column li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.footer-column li:hover {
+  color: #4CAF50;
+}
+
+/* აპლიკაციის ბლოკი */
+.footer-apps {
+  flex: 1;
+  text-align: left;   /* მარცხნივ გასწორება, რომ სვეტებს გაუსწორდეს */
+}
+
+.footer-apps p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: bold;  /* სათაური ბოლდი */
+}
+
+.footer-apps .app-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* მარცხნივ გაუსწორე ღილაკები */
+  gap: 10px;
+}
+
+.footer-apps .app-buttons img {
+  width: 180px;  /* შემცირებული ზომა */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.footer-apps .app-buttons img:hover {
+  transform: scale(1.06);
+}
+
+/* main */
 :root{
-  --green: #008037;
-  --dark: #333;
-  --muted: #f0f0f0;
-  --footer-pad: 28px;
+  --bg:#ffffff;
+  --muted:#6b7280;
+  --pin:#0f8f6f;
+  --pin-shadow:rgba(15,143,111,.24);
+  --label-bg: rgba(255,255,255,0.95);
 }
 
-/* Reset-ish */
+/* გვერდის ჩვენება */
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter, "Helvetica Neue", Arial, sans-serif;color:var(--dark);background:#fafafa}
-
-/* Footer */
-.footer{
-  background:#fff;
-  border-top:1px solid #e4e4e4;
-  padding: var(--footer-pad);
-  position:relative;
-  overflow:visible;
-  min-height:220px; /* adjustable */
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#0b1220;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-/* Main row that holds left info and map */
-.footer-content{
-  max-width:1200px;
-  margin:0 auto;
+/* კონტეინერი — კი გიგანტური რუკის ზომა */
+.container{
+  max-width:1400px;        /* ზრდადი მაქსიმუმი */
+  margin:28px auto;
+  padding:18px;
 }
 
-/* info-row: contact + pages + map side-by-side */
-.info-row{
-  display:flex;
-  gap:20px;
-  align-items:flex-start;
-}
 
-/* small info boxes */
-.info-box{
-  background:#fff;
-  border:2px solid var(--dark);
-  border-radius:8px;
-  padding:12px 14px;
-  min-width:200px;
+/* რუკის ყუთი */
+.map {
+  position: relative;
+  width: 100%;
+  max-width: 1000px; /* რომ ეკრანზე ზედმეტი არ გახდეს */
+  height: min(500px, 60vh); /* უფრო პატარა სიმაღლე */
+  margin: 0 auto; /* ცენტრში დაყენება */
+  background: white;
+  border-radius: 14px;
+  overflow: visible;
+  display: block;
+  box-shadow: 0 10px 30px rgba(2,6,23,.08);
+  border: 1px solid rgba(2,6,23,.04);
 }
-
-/* make contact + pages compact */
-.contact-box, .pages-box{
-  width:220px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-/* headings */
-.info-box h3{
-  margin:0 0 6px 0;
-  font-size:15px;
-  color:var(--green);
-}
-
-/* contact lines */
-.contact-line{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:14px;
-}
-.contact-line i{color:var(--green); width:18px; text-align:center}
-
-/* pages list */
-.pages-box ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px}
-.pages-box li::before{content:"\25AA";display:inline-block;margin-right:8px;color:var(--green);font-size:10px;vertical-align:middle}
-
-/* MAP box: replicate photo layout */
-.map-box{
-  position:relative;
-  flex:1;
-  min-width:300px;
-  border-radius:8px;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 6px 18px rgba(0,0,0,0.06);
-}
-.map-img{
-  width:100%;
-  height:160px;            /* map image height */
-  object-fit:cover;
+/* svg/img ისე გაავსებს ყუთს */
+.map img {
   display:block;
-  filter:contrast(0.98) saturate(0.95);
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  pointer-events:none; /* რათა ნიშნულები მიიღონ კლიკები */
+  user-select:none;
 }
 
-/* text overlay on map — styled like the photo */
-.map-text{
+/* პინი */
+.pin{
+  --s:32px;
   position:absolute;
-  left:18px;
-  bottom:14px;
-  background:rgba(255,255,255,0.92);
-  padding:10px 12px;
-  border-radius:6px;
-  box-shadow:0 6px 14px rgba(0,0,0,0.06);
-  display:flex;
-  flex-direction:column;
-  gap:6px;
+  width:var(--s);
+  height:var(--s);
+  transform:translate(-50%, -100%) rotate(45deg);
+  border-radius:50% 50% 50% 0;
+  background:var(--pin);
+  display:grid;
+  place-items:center;
+  box-shadow:0 10px 25px var(--pin-shadow);
+  border:2px solid #fff;
+  cursor:pointer;
+  transition:transform .12s ease, box-shadow .12s ease;
 }
-.map-text strong{font-size:15px;color:var(--dark)}
-.map-text span{font-size:13px;color:#666}
-.map-text .map-link{font-size:13px;color:var(--green);text-decoration:none;font-weight:600}
-
-/* footer bottom area (copyright + socials) */
-.footer-bottom{
-  max-width:1200px;
-  margin: 16px auto 0;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  padding-top:10px;
-  border-top:1px solid #eee;
-}
-
-/* socials */
-.footer-socials a{margin-left:8px;color:var(--dark);font-size:18px;text-decoration:none}
-.footer-socials a:hover{color:var(--green)}
-
-/* PHONE mockup — aligned to the footer's right-bottom and sized to footer height */
-.footer-phone{
-  position:absolute;
-  right:16px;
-  bottom:18px;            /* sits on bottom inside footer */
-  height: calc(100% - 36px); /* approximately footer height minus paddings */
-  display:flex;
-  align-items:center;
-  pointer-events:none;    /* prevent accidental clicks on mockup; change if you want badges clickable */
-  z-index:8;
-}
-
-/* phone frame adapt to footer height */
-.phone-frame{
-  height:100%;
-  width:120px;              /* narrow phone */
-  border-radius:26px;
-  background:#f7f9fa;
-  padding:10px;
-  border:6px solid var(--muted);
-  box-shadow:0 10px 24px rgba(0,0,0,0.12);
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
-}
-
-/* small notch */
-.phone-notch{width:44px;height:8px;background:#f7f9fa;border-radius:6px;margin:4px auto}
-
-/* screen area uses remaining height */
-.phone-screen{
+.pin:active{ transform:translate(-50%,-100%) rotate(45deg) scale(.96) }
+.pin::before{
+  content:"";
+  width:44%;
+  height:44%;
+  border-radius:50%;
   background:#fff;
-  flex:1;
-  border-radius:14px;
-  margin-top:6px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px;
+  translate:-2px -2px;
 }
-.phone-screen-inner{text-align:center;pointer-events:none}
-.phone-title{margin:0 0 8px;font-size:13px;color:#0b5a2f;font-weight:700}
-.phone-logo svg{display:block;margin:0 auto 8px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 6px 14px rgba(16,119,63,0.12)}
-.phone-badges{display:flex;flex-direction:column;gap:6px;align-items:center}
-.phone-badges .badge{width:100px;display:block}
 
-/* make badges clickable if pointer-events enabled on phone (not by default) */
-.phone-badges a{pointer-events:auto}
-
-/* responsiveness */
-@media (max-width:980px){
-  .info-row{flex-direction:column;gap:12px}
-  .map-img{height:200px}
-  .footer-phone{display:none} /* hide phone on small screens */
-  .footer{min-height:320px}
+/* პინის პატარა პულსი */
+.pin::after{
+  content:"";
+  position:absolute;
+  width:100%; height:100%;
+  border-radius:50%;
+  translate:-2px -2px;
+  animation:pulse 2.6s infinite;
+  box-shadow:0 0 0 0 rgba(15,143,111,0.22);
 }
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(15,143,111,0.22)}
+  70%{box-shadow:0 0 0 22px rgba(15,143,111,0)}
+  100%{box-shadow:0 0 0 0 rgba(15,143,111,0)}
+}
+
+/* სახელის ლეიბლი (რუკის ზედა ტექსტი рядом с pin) */
+.label{
+  position:absolute;
+  transform:translate(-50%, -12px); /* ტექსტს ოდნავ ზევით ვდგამთ */
+  background:var(--label-bg);
+  padding:6px 10px;
+  border-radius:10px;
+  font-size:13px;
+  white-space:nowrap;
+  border:1px solid rgba(2,6,23,.06);
+  box-shadow:0 8px 20px rgba(2,6,23,.06);
+  pointer-events:none; /* ლეიბლი არ ქრება, კლიკებით მხოლოდ pin */
+  color:#0b1220;
+}
+
+/* მცირე ეკრანებზე იწევა ზომა */
+@media (max-width:900px){
+  .container{padding:12px}
+  .map{height:64vh}
+  .pin{--s:26px}
+  .label{font-size:12px;padding:5px 8px}
+}
+
+/* მოდალი */
+dialog.modal{
+  border:none;
+  border-radius:10px;
+  padding:0;
+  width:min(560px, 92vw);
+  box-shadow:0 20px 60px rgba(2,6,23,.15);
+}
+dialog::backdrop{background:rgba(2,6,23,.45)}
+.modal header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(2,6,23,.04)}
+.modal .body{padding:14px;font-size:14px;color:var(--muted)}
+.btn{background:#0ea5e9;color:white;border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+.icon-btn{background:transparent;border:1px solid rgba(2,6,23,.06);padding:6px 10px;border-radius:6px;cursor:pointer}
